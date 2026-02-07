@@ -21,7 +21,67 @@
 
 .nav-menu {
     display: flex;
-    list-style: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(0, 123, 255, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 20px 0;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: 0.3s;
+    }
+
+    .nav-menu.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+
+    .navbar .container {
+        justify-content: space-between;
+    }
+}    list-style: none;
     gap: 30px;
 }
 
@@ -37,12 +97,16 @@
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        display: none; /* Hamburger later if needed */
+    .hero h1 {
+        font-size: 2.5em;
     }
     
-    .navbar .container {
-        justify-content: center;
+    .hero p {
+        font-size: 1.2em;
+    }
+    
+    .about, .services, .team, .contact {
+        padding: 50px 0;
     }
 }    padding: 0;
     box-sizing: border-box;
@@ -220,6 +284,38 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+
+/* Testimonials */
+.testimonials {
+    background: white;
+    padding: 80px 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-item {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+.testimonial-item blockquote {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.testimonial-item p {
+    font-weight: bold;
+    color: #007BFF;
 }
 
 /* Responsive */

@@ -1,3 +1,18 @@
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () =&gt; {
+    navMenu.classList.toggle('active');
+});
+
+// Close menu on outside click
+document.addEventListener('click', (e) =&gt; {
+    if (!hamburger.contains(e.target) &&amp;&amp; !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
+    }
+});
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^=&quot;#&quot;]').forEach(anchor =&gt; {
     anchor.addEventListener('click', function (e) {
