@@ -145,7 +145,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div class="bg-white shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300">
                     <h3 class="text-2xl text-primary font-semibold mb-4">Wade Wright</h3>
-                    <p class="text-gray-600 font-medium">Founder & CEO</p>
+                    <p class="text-gray-600 font-medium">Chief Executive Officer</p>
                 </div>
                 <div class="bg-white shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300">
                     <h3 class="text-2xl text-primary font-semibold mb-4">Kristin DeGroat</h3>
@@ -190,14 +190,19 @@
     </footer>
 
     <script>
-        // Hamburger menu toggle
+        // Hamburger menu toggle (Tailwind mobile hidden class)
         const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.md\\:flex.hidden'); // Tailwind class selector needs escape
-        if (hamburger && navMenu) {
-            hamburger.addEventListener('click', () => {
-                navMenu.classList.toggle('hidden');
-            });
-        }
+        const navMenu = document.querySelector('ul');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.add('hidden');
+            }
+        });
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -210,13 +215,15 @@
                         block: 'start'
                     });
                 }
+                // Close mobile menu
+                navMenu.classList.add('hidden');
             });
         });
 
         // Form demo
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thanks! Message sent. (Demo mode - add EmailJS keys for real sends)');
+            alert('Thanks! Message sent. (Demo mode - add EmailJS for real sends)');
             this.reset();
         });
     </script>
