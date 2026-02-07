@@ -30,9 +30,10 @@
             --bg-card: #FFFFFF;
             --text-main: #1E293B;
             --text-secondary: #475569;
-            --nav-bg: #1E293B;
-            --hero-gradient-from: #1E3A8A;
-            --hero-gradient-to: #3B82F6;
+            --nav-bg: #0F172A;
+            --hero-bg: #0F172A;
+            --hero-text: #F8FAFC;
+            --hero-accent: #FFD700;
         }
         
         /* Dark Mode: Midnight Premium */
@@ -45,8 +46,9 @@
             --text-main: #F8FAFC;
             --text-secondary: #CBD5E1;
             --nav-bg: #0F172A;
-            --hero-gradient-from: #1E3A8A;
-            --hero-gradient-to: #1D4ED8;
+            --hero-bg: #1E3A8A;
+            --hero-text: #F8FAFC;
+            --hero-accent: #FFD700;
         }
         
         body {
@@ -136,12 +138,12 @@
     </nav>
 
     <!-- Hero -->
-    <header class="hero-gradient text-white text-center py-32 min-h-[60vh] flex items-center">
+    <header class="text-center py-32 min-h-[60vh] flex items-center" style="background-color: var(--hero-bg); color: var(--hero-text);">
         <div class="max-w-6xl mx-auto px-4">
             <img src="images/emblem.png" alt="Besler Holdings Logo" class="mx-auto max-w-xs mb-8">
-            <h1 class="text-6xl md:text-7xl font-bold mb-8 drop-shadow-lg">Besler Holdings</h1>
-            <p class="text-2xl md:text-3xl opacity-90 mb-12 font-light drop-shadow-md">Strategic Investments. Enduring Value.</p>
-            <a href="#contact" class="inline-block px-12 py-6 rounded-full font-semibold text-xl hover:-translate-y-2 shadow-2xl transition-all duration-300 drop-shadow-2xl" style="background-color: var(--accent); color: var(--text-main);">Get In Touch</a>
+            <h1 class="text-6xl md:text-7xl font-bold mb-8 drop-shadow-lg" style="color: var(--hero-text);">Besler Holdings</h1>
+            <p class="text-2xl md:text-3xl mb-12 font-light drop-shadow-md" style="color: var(--hero-accent); opacity: 0.95;">Strategic Investments. Enduring Value.</p>
+            <a href="#contact" class="inline-block px-12 py-6 rounded-full font-semibold text-xl hover:-translate-y-2 shadow-2xl transition-all duration-300 drop-shadow-2xl" style="background-color: var(--hero-accent); color: #0F172A;">Get In Touch</a>
         </div>
     </header>
 
@@ -286,7 +288,7 @@
     <footer class="nav-bg text-white text-center py-8 border-t border-gray-700">
         <div class="max-w-6xl mx-auto px-4">
             <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto mx-auto mb-4">
-            <p class="text-sm" style="color: var(--text-secondary);">© 2026 Besler Holdings. All rights reserved. | <a href="#" class="hover:underline" style="color: var(--accent);">Privacy</a> | <a href="#" class="hover:underline" style="color: var(--accent);">Terms</a> | <span class="font-mono text-xs px-2 py-1 rounded ml-2" style="background-color: var(--accent); color: var(--text-main);">v2.1.0</span></p>
+            <p class="text-sm" style="color: var(--text-secondary);">© 2026 Besler Holdings. All rights reserved. | <a href="#" class="hover:underline" style="color: var(--accent);">Privacy</a> | <a href="#" class="hover:underline" style="color: var(--accent);">Terms</a> | <span class="font-mono text-xs px-2 py-1 rounded ml-2" style="background-color: var(--accent); color: var(--text-main);">v2.1.1</span></p>
         </div>
     </footer>
 
