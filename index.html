@@ -21,8 +21,8 @@
         }
     </script>
     <style>
+        /* Light Mode: Executive Navy */
         :root {
-            /* Theme 1: Executive Navy (Default) */
             --primary: #007BFF;
             --accent: #F59E0B;
             --bg-body: #F8FAFC;
@@ -30,43 +30,13 @@
             --bg-card: #FFFFFF;
             --text-main: #1E293B;
             --text-secondary: #475569;
+            --nav-bg: #1E293B;
+            --hero-gradient-from: #1E3A8A;
+            --hero-gradient-to: #3B82F6;
         }
         
-        /* Theme 2: Tech Growth */
-        [data-theme="tech-growth"] {
-            --primary: #007BFF;
-            --accent: #10B981;
-            --bg-body: #F0FDF4;
-            --bg-section: #DCFCE7;
-            --bg-card: #FFFFFF;
-            --text-main: #166534;
-            --text-secondary: #15803D;
-        }
-        
-        /* Theme 3: Heritage Slate */
-        [data-theme="heritage-slate"] {
-            --primary: #007BFF;
-            --accent: #64748B;
-            --bg-body: #F8FAFC;
-            --bg-section: #E2E8F0;
-            --bg-card: #FFFFFF;
-            --text-main: #334155;
-            --text-secondary: #475569;
-        }
-        
-        /* Theme 4: Coral Energy */
-        [data-theme="coral-energy"] {
-            --primary: #007BFF;
-            --accent: #EA580C;
-            --bg-body: #FFF7ED;
-            --bg-section: #FFEDD5;
-            --bg-card: #FFFFFF;
-            --text-main: #7C2D12;
-            --text-secondary: #9A3412;
-        }
-        
-        /* Theme 5: Midnight Premium */
-        [data-theme="midnight-premium"] {
+        /* Dark Mode: Midnight Premium */
+        .dark {
             --primary: #60A5FA;
             --accent: #FFD700;
             --bg-body: #0F172A;
@@ -74,6 +44,9 @@
             --bg-card: #334155;
             --text-main: #F8FAFC;
             --text-secondary: #CBD5E1;
+            --nav-bg: #0F172A;
+            --hero-gradient-from: #1E3A8A;
+            --hero-gradient-to: #1D4ED8;
         }
         
         body {
@@ -117,41 +90,33 @@
             border-color: var(--accent);
         }
         
-        .hover\:bg-accent:hover {
-            background-color: var(--accent);
+        .nav-bg {
+            background-color: var(--nav-bg);
         }
         
-        .hover\:text-accent:hover {
-            color: var(--accent);
-        }
-        
-        .ring-primary {
-            --tw-ring-color: var(--primary);
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--hero-gradient-from), var(--hero-gradient-to));
         }
     </style>
 </head>
 <body class="font-sans antialiased transition-colors duration-300">
     <!-- Navbar -->
-    <nav class="sticky top-0 bg-gray-900/95 backdrop-blur-md z-50 shadow-md py-4 border-b border-gray-800/50">
+    <nav class="sticky top-0 nav-bg/95 backdrop-blur-md z-50 shadow-md py-4 border-b border-gray-700/50">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
             <a href="#" class="nav-logo flex items-center gap-3">
                 <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto">
                 <span class="text-white font-bold text-xl hidden sm:block">Besler Holdings</span>
             </a>
             <div class="flex items-center gap-4">
-                <!-- Theme Switcher Dropdown -->
-                <div class="relative">
-                    <select id="theme-switcher" class="appearance-none bg-white/10 text-white text-sm font-medium py-2 pl-3 pr-8 rounded-lg border border-white/20 cursor-pointer hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/30">
-                        <option value="default" class="text-gray-900">⚓ Executive Navy</option>
-                        <option value="tech-growth" class="text-gray-900">💚 Tech Growth</option>
-                        <option value="heritage-slate" class="text-gray-900">⬛ Heritage Slate</option>
-                        <option value="coral-energy" class="text-gray-900">🌅 Coral Energy</option>
-                        <option value="midnight-premium" class="text-gray-900">🌙 Midnight Premium</option>
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                    </div>
-                </div>
+                <!-- Light/Dark Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors border border-white/20" title="Toggle Light/Dark">
+                    <svg id="sun-icon" class="w-6 h-6 text-yellow-400 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                    <svg id="moon-icon" class="w-6 h-6 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
                 
                 <button class="md:hidden hamburger flex flex-col gap-1.5 p-1">
                     <span class="w-6 h-0.5 bg-white transition-all"></span>
@@ -159,24 +124,24 @@
                     <span class="w-6 h-0.5 bg-white transition-all"></span>
                 </button>
                 <ul class="md:flex hidden list-none gap-8 m-0">
-                    <li><a href="#about" class="text-white font-medium hover:text-yellow-400 transition-colors">About</a></li>
-                    <li><a href="#services" class="text-white font-medium hover:text-yellow-400 transition-colors">Services</a></li>
-                    <li><a href="#portfolio" class="text-white font-medium hover:text-yellow-400 transition-colors">Portfolio</a></li>
-                    <li><a href="#news" class="text-white font-medium hover:text-yellow-400 transition-colors">News</a></li>
-                    <li><a href="#team" class="text-white font-medium hover:text-yellow-400 transition-colors">Team</a></li>
-                    <li><a href="#contact" class="text-white font-medium hover:text-yellow-400 transition-colors">Contact</a></li>
+                    <li><a href="#about" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">About</a></li>
+                    <li><a href="#services" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Services</a></li>
+                    <li><a href="#portfolio" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Portfolio</a></li>
+                    <li><a href="#news" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">News</a></li>
+                    <li><a href="#team" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Team</a></li>
+                    <li><a href="#contact" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <header class="text-white text-center py-32 min-h-[60vh] flex items-center" style="background: linear-gradient(135deg, var(--primary), #1d4ed8);">
+    <header class="hero-gradient text-white text-center py-32 min-h-[60vh] flex items-center">
         <div class="max-w-6xl mx-auto px-4">
             <img src="images/emblem.png" alt="Besler Holdings Logo" class="mx-auto max-w-xs mb-8">
             <h1 class="text-6xl md:text-7xl font-bold mb-8 drop-shadow-lg">Besler Holdings</h1>
             <p class="text-2xl md:text-3xl opacity-90 mb-12 font-light drop-shadow-md">Strategic Investments. Enduring Value.</p>
-            <a href="#contact" class="inline-block px-12 py-6 rounded-full font-semibold text-xl hover:-translate-y-2 shadow-2xl transition-all duration-300 drop-shadow-2xl bg-white" style="color: var(--primary);">Get In Touch</a>
+            <a href="#contact" class="inline-block px-12 py-6 rounded-full font-semibold text-xl hover:-translate-y-2 shadow-2xl transition-all duration-300 drop-shadow-2xl" style="background-color: var(--accent); color: var(--text-main);">Get In Touch</a>
         </div>
     </header>
 
@@ -312,32 +277,53 @@
                 <input type="text" name="user_name" placeholder="Your Name" required class="w-full p-4 mb-4 border rounded-lg text-lg font-medium theme-bg-card focus:ring-2 focus:ring-primary focus:border-primary transition-colors" style="border-color: var(--text-secondary); color: var(--text-main);">
                 <input type="email" name="user_email" placeholder="Your Email" required class="w-full p-4 mb-4 border rounded-lg text-lg font-medium theme-bg-card focus:ring-2 focus:ring-primary focus:border-primary transition-colors" style="border-color: var(--text-secondary); color: var(--text-main);">
                 <textarea name="message" placeholder="Your Message" rows="5" required class="w-full p-4 mb-6 border rounded-lg text-lg font-medium resize-vertical theme-bg-card focus:ring-2 focus:ring-primary focus:border-primary transition-colors" style="border-color: var(--text-secondary); color: var(--text-main);"></textarea>
-                <button type="submit" class="w-full text-white py-4 px-8 rounded-lg text-xl font-semibold hover:opacity-90 transition-all duration-300 shadow-lg bg-primary">Send Message</button>
+                <button type="submit" class="w text-white py-4 px-8 rounded-lg text-xl font-semibold hover:opacity-90 transition-all duration-300 shadow-lg" style="background-color: var(--primary);">Send Message</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-8 border-t border-gray-800">
+    <footer class="nav-bg text-white text-center py-8 border-t border-gray-700">
         <div class="max-w-6xl mx-auto px-4">
             <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto mx-auto mb-4">
-            <p class="text-sm text-gray-300">© 2026 Besler Holdings. All rights reserved. | <a href="#" class="hover:underline" style="color: var(--accent);">Privacy</a> | <a href="#" class="hover:underline" style="color: var(--accent);">Terms</a> | <span class="font-mono text-xs px-2 py-1 rounded ml-2" style="background-color: var(--accent); color: var(--text-main);">v2.0.4</span></p>
+            <p class="text-sm" style="color: var(--text-secondary);">© 2026 Besler Holdings. All rights reserved. | <a href="#" class="hover:underline" style="color: var(--accent);">Privacy</a> | <a href="#" class="hover:underline" style="color: var(--accent);">Terms</a> | <span class="font-mono text-xs px-2 py-1 rounded ml-2" style="background-color: var(--accent); color: var(--text-main);">v2.1.0</span></p>
         </div>
     </footer>
 
     <script>
-        // Theme Switcher
-        const themeSwitcher = document.getElementById('theme-switcher');
-        
-        // Load saved theme
-        const savedTheme = localStorage.getItem('theme') || 'default';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        themeSwitcher.value = savedTheme;
-        
-        themeSwitcher.addEventListener('change', (e) => {
-            const newTheme = e.target.value;
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+        // Light/Dark Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const html = document.documentElement;
+
+        // Default to dark mode (Midnight Premium)
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            html.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark');
+            if (isDark) {
+                // Switch to light (Executive Navy)
+                html.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            } else {
+                // Switch to dark (Midnight Premium)
+                html.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            }
         });
 
         // Hamburger menu toggle
@@ -365,7 +351,6 @@
                         block: 'start'
                     });
                 }
-                // Close mobile menu
                 navMenu.classList.add('hidden');
             });
         });
