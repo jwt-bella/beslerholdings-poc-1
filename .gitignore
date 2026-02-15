@@ -1,0 +1,4 @@
+node_modules/
+.a0proj/
+*.bak
+.DS_Store
