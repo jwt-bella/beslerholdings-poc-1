@@ -1,190 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Besler Holdings</title>
-<link rel="stylesheet" href="css/styles.css">
-<style>
-/* Navigation Styles */
-.navbar {
-background: #1a2332;
-padding: 1rem 0;
-position: sticky;
-top: 0;
-z-index: 100;
-}
-.navbar .container {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.nav-logo {
-color: #ffd700;
-font-size: 1.5rem;
-text-decoration: none;
-font-weight: bold;
-}
-.nav-links {
-display: flex;
-list-style: none;
-gap: 2rem;
-margin: 0;
-padding: 0;
-}
-.nav-links a {
-color: #ffd700;
-text-decoration: none;
-font-weight: 500;
-transition: color 0.3s;
-}
-.nav-links a:hover {
-color: #fff;
-}
-/* Dropdown */
-.dropdown {
-position: relative;
-}
-.dropdown-content {
-display: none;
-position: absolute;
-background: #1a2332;
-min-width: 280px;
-box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-border-radius: 4px;
-padding: 0.5rem 0;
-}
-.dropdown-content a {
-color: #ffd700;
-padding: 12px 16px;
-display: block;
-}
-.dropdown-content a:hover {
-background: #2a3342;
-color: #fff;
-}
-.dropdown:hover .dropdown-content {
-display: block;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Besler Holdings - Strategic Investments. Enduring Value.</title>
+    <meta name="description" content="Besler Holdings is a dynamic investment firm dedicated to fostering growth and delivering exceptional value through insightful strategies.">
+    <meta name="keywords" content="investments, holdings, advisory, finance">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--primary)',
+                        accent: 'var(--accent)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Light Mode: Executive Navy */
+        :root {
+            --primary: #007BFF;
+            --accent: #F59E0B;
+            --bg-body: #F8FAFC;
+            --bg-section: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --text-main: #1E293B;
+            --text-secondary: #475569;
+            --nav-bg: #0F172A;
+            --hero-bg: #1e3a8a;
+            --hero-text: #F8FAFC;
+            --hero-accent: #FFD700;
+        }
+        
+        /* Dark Mode: Midnight Premium */
+        .dark {
+            --primary: #60A5FA;
+            --accent: #FFD700;
+            --bg-body: #0F172A;
+            --bg-section: #1E293B;
+            --bg-card: #334155;
+            --text-main: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --nav-bg: #0F172A;
+            --hero-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            --hero-text: #F8FAFC;
+            --hero-accent: #FFD700;
+        }
+        
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+        }
+        
+        .theme-bg-section {
+            background-color: var(--bg-section);
+        }
+        
+        .theme-bg-card {
+            background-color: var(--bg-card);
+        }
+        
+        .theme-text-secondary {
+            color: var(--text-secondary);
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        
+        .text-accent {
+            color: var(--accent);
+        }
+        
+        .bg-accent {
+            background-color: var(--accent);
+        }
+        
+        .border-primary {
+            border-color: var(--primary);
+        }
+        
+        .border-accent {
+            border-color: var(--accent);
+        }
+        
+        .nav-bg {
+            background-color: var(--nav-bg);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--hero-gradient-from), var(--hero-gradient-to));
+        }
+    </style>
 </head>
-<body>
-<!-- Navigation -->
-<nav class="navbar">
-<div class="container">
-<a href="#" class="nav-logo">☀ Besler Holdings</a>
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li class="dropdown">
-<a href="#resources">Resources ▼</a>
-<div class="dropdown-content">
-<a href="besler-guide-to-appeals.md">BESLER Guide to Appeals (Webinar Summary)</a>
-<a href="guide-to-hospital-reimbursement-appeals.md">Guide to Hospital Reimbursement Appeals</a>
+<body class="font-sans antialiased transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 shadow-md py-4 border-b border-gray-700/50" style="background-color: #0F172A;">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="nav-logo flex items-center gap-3">
+                <img src="images/logo.png" alt="Besler Holdings" class="h-10 w-auto sm:hidden">
+                <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto hidden sm:block">
+                <span class="text-white font-bold text-xl hidden sm:block">Besler Holdings</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <!-- Light/Dark Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors border border-white/20" title="Toggle Light/Dark">
+                    <svg id="sun-icon" class="w-6 h-6 text-yellow-400 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                    <svg id="moon-icon" class="w-6 h-6 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+                
+                <button class="md:hidden hamburger flex flex-col gap-1.5 p-1">
+                    <span class="w-6 h-0.5 bg-white transition-all"></span>
+                    <span class="w-6 h-0.5 bg-white transition-all"></span>
+                    <span class="w-6 h-0.5 bg-white transition-all"></span>
+                </button>
+                <ul class="md:flex hidden list-none gap-8 m-0">
+                    <li><a href="#about" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">About</a></li>
+                    <li><a href="#services" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Services</a></li>
+                    <li><a href="#portfolio" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Portfolio</a></li>
+                    <!-- Resources Dropdown -->
+<li class="relative group">
+<button class="text-white font-medium transition-colors flex items-center gap-1" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">
+Resources
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+</button>
+<div class="absolute left-0 mt-2 w-72 bg-gray-900 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-700">
+<a href="hospital-reimbursement-appeals.html" class="block px-4 py-3 text-sm text-yellow-400 hover:bg-gray-800 hover:text-white first:rounded-t-lg transition-colors">
+Hospital Reimbursement Appeals
+</a>
+<a href="guide-to-appeals.html" class="block px-4 py-3 text-sm text-yellow-400 hover:bg-gray-800 hover:text-white last:rounded-b-lg transition-colors">
+Guide to Appeals
+</a>
 </div>
 </li>
-<li><a href="#team">Team</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
-</nav>
+                    <li><a href="#team" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Team</a></li>
+                    <li><a href="#contact" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<header class="hero">
-<div class="container">
-<img src="images/logo.png" alt="Besler Holdings Logo" class="logo">
-<h1>Besler Holdings</h1>
-<p>Strategic Investments. Enduring Value.</p>
-<a href="#contact" class="cta-button">Get In Touch</a>
-</div>
-</header>
+    <!-- Hero -->
+    <header class="text-center py-32 min-h-[60vh] flex items-center" style="background: var(--hero-bg); color: var(--hero-text);">
+        <div class="max-w-6xl mx-auto px-4">
+            <img src="images/emblem.png" alt="Besler Holdings Logo" class="mx-auto max-w-xs mb-8">
+            <h1 class="text-6xl md:text-7xl font-bold mb-8 drop-shadow-lg" style="color: var(--hero-text);">Besler Holdings</h1>
+            <p class="text-2xl md:text-3xl mb-12 font-light drop-shadow-md" style="color: var(--hero-accent); opacity: 0.95;">Strategic Investments. Enduring Value.</p>
+            <a href="#contact" class="inline-block px-12 py-6 rounded-full font-semibold text-xl hover:-translate-y-2 shadow-2xl transition-all duration-300 drop-shadow-2xl" style="background-color: var(--hero-accent); color: #0F172A;">Get In Touch</a>
+        </div>
+    </header>
 
-<section id="about" class="about">
-<div class="container">
-<h2>About Us</h2>
-<p>Besler Holdings is a dynamic investment firm dedicated to fostering growth and delivering exceptional value through insightful strategies and unwavering commitment.</p>
-</div>
-</section>
+    <!-- About -->
+    <section id="about" class="theme-bg-section py-20 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl text-primary font-semibold mb-12">About Us</h2>
+            <p class="text-xl max-w-3xl mx-auto font-light theme-text-secondary">Besler Holdings is a dynamic investment firm dedicated to fostering growth and delivering exceptional value through insightful strategies and unwavering commitment.</p>
+        </div>
+    </section>
 
-<section id="services" class="services">
-<div class="container">
-<h2>Our Focus</h2>
-<div class="service-grid">
-<div class="service-item">
-<h3>Investments</h3>
-<p>Curated portfolios across diverse sectors.</p>
-</div>
-<div class="service-item">
-<h3>Advisory</h3>
-<p>Expert guidance for sustainable growth.</p>
-</div>
-<div class="service-item">
-<h3>Holdings Management</h3>
-<p>Optimizing assets for long-term success.</p>
-</div>
-</div>
-</div>
-</section>
+    <!-- Services -->
+    <section id="services" class="py-20" style="background-color: rgba(0, 0, 0, 0.02);">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl text-primary font-semibold text-center mb-16">Our Focus</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="theme-bg-card shadow-lg rounded-xl p-10 hover:-translate-y-3 transition-all duration-300 text-center border" style="border-color: var(--bg-section);">
+                    <h3 class="text-2xl text-primary font-semibold mb-6">Investments</h3>
+                    <p class="theme-text-secondary">Curated portfolios across diverse sectors.</p>
+                </div>
+                <div class="theme-bg-card shadow-lg rounded-xl p-10 hover:-translate-y-3 transition-all duration-300 text-center border" style="border-color: var(--bg-section);">
+                    <h3 class="text-2xl text-primary font-semibold mb-6">Advisory</h3>
+                    <p class="theme-text-secondary">Expert guidance for sustainable growth.</p>
+                </div>
+                <div class="theme-bg-card shadow-lg rounded-xl p-10 hover:-translate-y-3 transition-all duration-300 text-center border" style="border-color: var(--bg-section);">
+                    <h3 class="text-2xl text-primary font-semibold mb-6">Holdings Management</h3>
+                    <p class="theme-text-secondary">Optimizing assets for long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="portfolio" class="portfolio">
-<div class="container">
-<h2>Portfolio</h2>
-<p>Our strategic investments across healthcare and technology sectors.</p>
-</div>
-</section>
+    <!-- Portfolio -->
+    <section id="portfolio" class="theme-bg-section py-20 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl text-primary font-semibold text-center mb-16">Our Portfolio</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="theme-bg-card shadow-lg rounded-xl p-10 hover:-translate-y-3 transition-all duration-300 border" style="border-color: var(--bg-section);">
+                    <h3 class="text-2xl text-primary font-semibold mb-4">Tech Ventures</h3>
+                    <p class="theme-text-secondary">Leading investments in innovative software and AI companies.</p>
+                </div>
+                <div class="theme-bg-card shadow-lg rounded-xl p-10 hover:-translate-y-3 transition-all duration-300 border" style="border-color: var(--bg-section);">
+                    <h3 class="text-2xl text-primary font-semibold mb-4">Healthcare Holdings</h3>
+                    <p class="theme-text-secondary">Strategic stakes in medical tech and biotech firms.</p>
+                </div>
+                <div class="theme-bg-card shadow-lg rounded-xl p-10 hover:-translate-y-3 transition-all duration-300 border" style="border-color: var(--bg-section);">
+                    <h3 class="text-2xl text-primary font-semibold mb-4">Real Estate</h3>
+                    <p class="theme-text-secondary">Premium commercial and residential properties nationwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="team" class="team">
-<div class="container">
-<h2>Leadership</h2>
-<div class="team-grid">
-<div class="team-member">
-<h3>Kristin DeGroat</h3>
-<p>Chief Legal Officer</p>
-</div>
-<div class="team-member">
-<h3>Maria Palumbo</h3>
-<p>Chief Financial Officer</p>
-</div>
-<div class="team-member">
-<h3>Eric Englebretson</h3>
-<p>VP of Information Technology</p>
-</div>
-<div class="team-member">
-<h3>Kelly Wisness</h3>
-<p>VP of Marketing</p>
-</div>
-</div>
-</div>
-</section>
+    <!-- News -->
+    <section id="news" class="py-20" style="background-color: rgba(0, 0, 0, 0.02);">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl text-primary font-semibold text-center mb-16">Latest News</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <article class="border-l-4 pl-6" style="border-color: var(--primary);">
+                    <h4 class="text-xl text-primary font-semibold mb-2">New Investment in AI Startup</h4>
+                    <p class="mb-4 theme-text-secondary">Announcing our latest venture funding round...</p>
+                    <time class="theme-text-secondary text-sm">Feb 2026</time>
+                </article>
+                <article class="border-l-4 pl-6" style="border-color: var(--primary);">
+                    <h4 class="text-xl text-primary font-semibold mb-2">Q4 Portfolio Update</h4>
+                    <p class="mb-4 theme-text-secondary">Strong returns across all sectors...</p>
+                    <time class="theme-text-secondary text-sm">Jan 2026</time>
+                </article>
+            </div>
+        </div>
+    </section>
 
-<section id="resources" class="resources">
-<div class="container">
-<h2>Resources</h2>
-<p>Explore our guides and insights on healthcare reimbursement:</p>
-<ul class="resource-list">
-<li><a href="besler-guide-to-appeals.md">BESLER Guide to Appeals (Webinar Summary)</a></li>
-<li><a href="guide-to-hospital-reimbursement-appeals.md">Guide to Hospital Reimbursement Appeals</a></li>
-</ul>
-</div>
-</section>
+    <!-- Testimonials -->
+    <section id="testimonials" class="theme-bg-section py-20 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl text-primary font-semibold text-center mb-16">What Our Partners Say</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-opacity-20 p-10 rounded-xl shadow-md italic" style="background-color: var(--bg-section);">
+                    <blockquote class="text-2xl mb-6 theme-text-secondary font-light">"Besler Holdings transformed our portfolio strategy."</blockquote>
+                    <p class="font-semibold text-primary">- Executive Partner</p>
+                </div>
+                <div class="bg-opacity-20 p-10 rounded-xl shadow-md italic" style="background-color: var(--bg-section);">
+                    <blockquote class="text-2xl mb-6 theme-text-secondary font-light">"Unmatched expertise and results-driven approach."</blockquote>
+                    <p class="font-semibold text-primary">- Industry Leader</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" class="contact">
-<div class="container">
-<h2>Contact Us</h2>
-<p>Ready to explore opportunities? Reach out today.</p>
-<form>
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea placeholder="Your Message" rows="5" required></textarea>
-<button type="submit">Send Message</button>
-</form>
-</div>
-</section>
+    <!-- Team -->
+    <section id="team" class="py-20" style="background-color: rgba(0, 0, 0, 0.02);">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl text-primary font-semibold text-center mb-16">Leadership</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="phil-besler.html" class="theme-bg-card shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300 border block group cursor-pointer" style="border-color: var(--bg-section);">
+                    <img src="images/phil-besler.jpg" alt="Phil Besler" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-2xl text-primary font-semibold mb-4 group-hover:text-accent transition-colors">Phil Besler</h3>
+                    <p class="theme-text-secondary font-medium">Chairman of the Board</p>
+                    <span class="inline-block mt-4 text-sm opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--accent);">View Profile →</span>
+                </a>
+                <a href="wade-wright.html" class="theme-bg-card shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300 border block group cursor-pointer" style="border-color: var(--bg-section);">
+                    <img src="images/wade-wright.jpg" alt="Wade Wright" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-2xl text-primary font-semibold mb-4 group-hover:text-accent transition-colors">Wade Wright</h3>
+                    <p class="theme-text-secondary font-medium">Chief Executive Officer</p>
+                    <span class="inline-block mt-4 text-sm opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--accent);">View Profile →</span>
+                </a>
+                <a href="kristin-degroat.html" class="theme-bg-card shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300 border block group cursor-pointer" style="border-color: var(--bg-section);">
+                    <img src="images/kristin-degroat.jpg" alt="Kristin DeGroat" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-2xl text-primary font-semibold mb-4 group-hover:text-accent transition-colors">Kristin DeGroat</h3>
+                    <p class="theme-text-secondary font-medium">Chief Legal Officer</p>
+                    <span class="inline-block mt-4 text-sm opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--accent);">View Profile →</span>
+                </a>
+                <a href="maria-palumbo.html" class="theme-bg-card shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300 border block group cursor-pointer" style="border-color: var(--bg-section);">
+                    <img src="images/maria-palumbo.jpg" alt="Maria Palumbo" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-2xl text-primary font-semibold mb-4 group-hover:text-accent transition-colors">Maria Palumbo</h3>
+                    <p class="theme-text-secondary font-medium">Chief Financial Officer</p>
+                    <span class="inline-block mt-4 text-sm opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--accent);">View Profile →</span>
+                </a>
+                <a href="jason-nadal.html" class="theme-bg-card shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300 border block group cursor-pointer" style="border-color: var(--bg-section);">
+                    <img src="images/jason-nadal.jpg" alt="Jason Nadal" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-2xl text-primary font-semibold mb-4 group-hover:text-accent transition-colors">Jason Nadal</h3>
+                    <p class="theme-text-secondary font-medium">Information Security Officer</p>
+                    <span class="inline-block mt-4 text-sm opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--accent);">View Profile →</span>
+                </a>
+                <a href="kelly-wisness.html" class="theme-bg-card shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300 border block group cursor-pointer" style="border-color: var(--bg-section);">
+                    <img src="images/kelly-wisness.jpg" alt="Kelly Wisness" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-2xl text-primary font-semibold mb-4 group-hover:text-accent transition-colors">Kelly Wisness</h3>
+                    <p class="theme-text-secondary font-medium">VP of Marketing</p>
+                    <span class="inline-block mt-4 text-sm opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--accent);">View Profile →</span>
+                </a>
+                <a href="eric-englebretson.html" class="theme-bg-card shadow-lg rounded-xl p-8 text-center hover:-translate-y-3 transition-all duration-300 border block group cursor-pointer md:col-start-2" style="border-color: var(--bg-section);">
+                    <img src="images/eric-englebretson.jpg" alt="Eric Englebretson" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-2xl text-primary font-semibold mb-4 group-hover:text-accent transition-colors">Eric Englebretson</h3>
+                    <p class="theme-text-secondary font-medium">VP of Information Technology</p>
+                    <span class="inline-block mt-4 text-sm opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--accent);">View Profile →</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<footer>
-<div class="container">
-<p>&copy; 2026 Besler Holdings. All rights reserved.</p>
-</div>
-</footer>
+    <!-- Contact -->
+    <section id="contact" class="theme-bg-section py-20 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl text-primary font-semibold text-center mb-8">Contact Us</h2>
+            <p class="text-xl text-center mb-16 font-light theme-text-secondary">Ready to explore opportunities? Reach out today.</p>
+            <form class="max-w-lg mx-auto">
+                <input type="text" name="user_name" placeholder="Your Name" required class="w-full p-4 mb-4 border rounded-lg text-lg font-medium theme-bg-card focus:ring-2 focus:ring-primary focus:border-primary transition-colors" style="border-color: var(--text-secondary); color: var(--text-main);">
+                <input type="email" name="user_email" placeholder="Your Email" required class="w-full p-4 mb-4 border rounded-lg text-lg font-medium theme-bg-card focus:ring-2 focus:ring-primary focus:border-primary transition-colors" style="border-color: var(--text-secondary); color: var(--text-main);">
+                <textarea name="message" placeholder="Your Message" rows="5" required class="w-full p-4 mb-6 border rounded-lg text-lg font-medium resize-vertical theme-bg-card focus:ring-2 focus:ring-primary focus:border-primary transition-colors" style="border-color: var(--text-secondary); color: var(--text-main);"></textarea>
+                <button type="submit" class="w text-white py-4 px-8 rounded-lg text-xl font-semibold hover:opacity-90 transition-all duration-300 shadow-lg" style="background-color: var(--primary);">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="nav-bg text-white text-center py-8 border-t border-gray-700">
+        <div class="max-w-6xl mx-auto px-4">
+            <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto mx-auto mb-4">
+            <p class="text-sm" style="color: var(--text-secondary);">© 2026 Besler Holdings. All rights reserved. | <a href="#" class="hover:underline" style="color: var(--accent);">Privacy</a> | <a href="#" class="hover:underline" style="color: var(--accent);">Terms</a> | <span class="font-mono text-xs ml-2" style="color: var(--text-secondary);">v2.5.1</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Light/Dark Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const html = document.documentElement;
+
+        // Default to dark mode (Midnight Premium)
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            html.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark');
+            if (isDark) {
+                // Switch to light (Executive Navy)
+                html.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            } else {
+                // Switch to dark (Midnight Premium)
+                html.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('ul');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                navMenu.classList.add('hidden');
+            });
+        });
+
+        // Form demo
+        document.querySelector('form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thanks! Message sent. (Demo mode - add EmailJS for real sends)');
+            this.reset();
+        });
+    </script>
 </body>
 </html>

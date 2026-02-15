@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Guide to Hospital Reimbursement Appeals | Besler Holdings</title>
+    <meta name="description" content="A comprehensive guide to navigating hospital reimbursement appeals, cost report disputes, and Medicare regulations.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--primary)',
+                        accent: 'var(--accent)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Light Mode: Executive Navy */
+        :root {
+            --primary: #007BFF;
+            --accent: #F59E0B;
+            --bg-body: #F8FAFC;
+            --bg-section: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --text-main: #1E293B;
+            --text-secondary: #475569;
+            --nav-bg: #0F172A;
+        }
+
+        /* Dark Mode: Midnight Premium */
+        .dark {
+            --primary: #60A5FA;
+            --accent: #FFD700;
+            --bg-body: #0F172A;
+            --bg-section: #1E293B;
+            --bg-card: #334155;
+            --text-main: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --nav-bg: #0F172A;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+        }
+
+        .theme-bg-section {
+            background-color: var(--bg-section);
+        }
+
+        .theme-bg-card {
+            background-color: var(--bg-card);
+        }
+
+        .theme-text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .bg-primary {
+            background-color: var(--primary);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .nav-bg {
+            background-color: var(--nav-bg);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 shadow-md py-4 border-b border-gray-700/50" style="background-color: #0F172A;">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="nav-logo flex items-center gap-3">
+                <img src="images/logo.png" alt="Besler Holdings" class="h-10 w-auto sm:hidden">
+                <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto hidden sm:block">
+                <span class="text-white font-bold text-xl hidden sm:block">Besler Holdings</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors border border-white/20" title="Toggle Light/Dark">
+                    <svg id="sun-icon" class="w-6 h-6 text-yellow-400 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                    <svg id="moon-icon" class="w-6 h-6 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="text-center py-20 min-h-[40vh] flex items-center justify-center" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="text-lg mb-4" style="color: var(--accent);">Insights</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: #F8FAFC;">Your Guide to Hospital Reimbursement Appeals</h1>
+            <p class="text-xl font-light mt-6" style="color: #FFD700;">May 20, 2024</p>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="theme-bg-section py-20 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="theme-bg-card shadow-xl rounded-2xl p-8 md:p-12 border" style="border-color: var(--bg-section);">
+                
+                <div class="prose max-w-none">
+                    <p class="text-lg theme-text-secondary mb-8 leading-relaxed">
+                        Proper Medicare reimbursement is crucial for hospitals. It fuels their ability to provide high-quality care, invest in cutting-edge technology, and attract skilled staff. The complexities of Medicare cost reporting, however, can lead to denials and discrepancies, thus threatening financial stability.
+                    </p>
+
+                    <p class="theme-text-secondary mb-8 leading-relaxed">
+                        Hospitals facing cost report denials often embark on a challenging appeals process. Stringent deadlines, precise discrepancy documentation, and well-supported arguments are all essential for success. However, navigating the legalities, reimbursement calculations, and intricate Medicare regulations can be overwhelming.
+                    </p>
+
+                    <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary p-6 mb-8 rounded-r-lg">
+                        <p class="theme-text-secondary italic">
+                            <strong class="text-primary">Expert Resources:</strong> Turn Medicare appeal challenges into victories by listening to BESLER's expert-led <a href="https://www.besler.com/insights/guide-to-appeals/" class="text-primary hover:underline" target="_blank">webinar</a> and <a href="https://www.besler.com/insights/guide-to-appeals-webinar/" class="text-primary hover:underline" target="_blank">podcast series</a>. <a href="kristin-degroat.html" class="text-primary hover:underline">Kristin DeGroat</a>, BESLER's General Counsel; Christina Brown, BESLER's Director of Reimbursement; and Leslie Goldsmith, Partner at Bass, Berry & Sims, offer invaluable legal expertise and guidance on the finer points of navigating the hospital reimbursement appeals process.
+                        </p>
+                    </div>
+
+                    <h2 class="text-3xl font-bold text-primary mb-6 mt-12">Understanding Cost Report Appeals</h2>
+                    
+                    <p class="theme-text-secondary mb-6 leading-relaxed">
+                        Hospitals rely on Cost Reports to secure fair Medicare reimbursement. These reports outline the costs incurred during healthcare service delivery and are crucial in determining payment for treating Medicare beneficiaries. Medicare intermediaries review the submitted Cost Reports for accuracy and may request additional documentation.
+                    </p>
+
+                    <p class="theme-text-secondary mb-6 leading-relaxed">
+                        The reviewed Cost Report, along with established payment policies, ultimately determine a hospital's current reimbursement. However, the significance of Cost Reports goes beyond immediate financial impact.
+                    </p>
+
+                    <p class="theme-text-secondary mb-8 leading-relaxed">
+                        The data they contain, when combined with information from Medicare Parts A & B (MedPar), builds a critical foundation. This combined dataset informs Congress and the Centers for Medicare & Medicaid Services (CMS) when setting future payment rates and making policy decisions regarding Medicare reimbursement.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-primary mb-4 mt-10">Protested Amounts</h3>
+                    
+                    <p class="theme-text-secondary mb-6 leading-relaxed">
+                        Hospitals can dispute disallowed costs through "protested amounts." The hospital includes these costs on the Cost Report (usually on Worksheet E) as allowable under Medicare. Hospitals should preserve appeal rights by either claiming the cost as allowable or "self-disallowing" it, providing an explanation and estimated reimbursement amount. This ensures the ability to fight for these costs later, even if initially denied.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-primary mb-4 mt-10">Amendments vs. Reopenings</h3>
+                    
+                    <p class="theme-text-secondary mb-6 leading-relaxed">
+                        Navigating Cost Report adjustments can involve two key options: amendments and reopenings. While both aim to rectify errors, they differ in purpose and timing:
+                    </p>
+
+                    <h4 class="text-xl font-bold text-primary mb-4 mt-8">Amendments</h4>
+                    
+                    <p class="theme-text-secondary mb-6 leading-relaxed">
+                        Amendments are ideal for addressing material errors identified before the official Notice of Program Reimbursement (NPR) is issued. These errors must significantly impact the hospital's reimbursement.
+                    </p>
+
+                    <p class="theme-text-secondary mb-6 leading-relaxed">
+                        Common reasons for amendments include miscalculations or incorrect application of specific cost reporting rules, like Disproportionate Share Hospital (DSH) adjustments. Medicare Administrative Contractors (MACs) may decline amendments unless they significantly affect reimbursement.
+                    </p>
+
+                    <h4 class="text-xl font-bold text-primary mb-4 mt-8">Reopenings</h4>
+                    
+                    <p class="theme-text-secondary mb-6 leading-relaxed">
+                        The provider, CMS, or the MAC can initiate reopenings. They are allowable within specific timeframes and can be an important tool for correcting errors after the NPR has been issued.
+                    </p>
+
+                    <div class="mt-12 p-6 border border-primary/20 rounded-lg" style="background-color: var(--bg-section);">
+                        <h4 class="text-lg font-bold text-primary mb-2">Need Help?</h4>
+                        <p class="theme-text-secondary mb-4">Contact our team for expert guidance on your reimbursement appeals.</p>
+                        <a href="index.html#contact" class="inline-flex items-center px-4 py-2 rounded font-semibold transition-all duration-300 hover:-translate-y-1" style="background-color: var(--primary); color: white;">Contact Us →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="mt-8 text-center">
+                <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1" style="background-color: var(--primary); color: white;">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="nav-bg text-white text-center py-8 border-t border-gray-700">
+        <div class="max-w-6xl mx-auto px-4">
+            <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto mx-auto mb-4">
+            <p class="text-sm" style="color: var(--text-secondary);">© 2026 Besler Holdings. All rights reserved. | <a href="#" class="hover:underline" style="color: var(--accent);">Privacy</a> | <a href="#" class="hover:underline" style="color: var(--accent);">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Light/Dark Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            html.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark');
+            if (isDark) {
+                html.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

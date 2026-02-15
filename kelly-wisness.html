@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelly Wisness - Vice President of Marketing | Besler Holdings</title>
+    <meta name="description" content="Kelly Wisness is the Vice President of Marketing at Besler Holdings, with 25+ years of marketing and communications experience.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--primary)',
+                        accent: 'var(--accent)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Light Mode: Executive Navy */
+        :root {
+    --primary: #00AEEF;
+    --accent: #00AEEF;
+    --bg-body: #0F172A;
+    --bg-section: #1E293B;
+    --bg-card: #334155;
+    --text-main: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --nav-bg: #0F172A;
+}
+
+        /* Dark Mode: Midnight Premium */
+        .dark {
+            --primary: #60A5FA;
+            --accent: #FFD700;
+            --bg-body: #0F172A;
+            --bg-section: #1E293B;
+            --bg-card: #334155;
+            --text-main: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --nav-bg: #0F172A;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+        }
+
+        .theme-bg-section {
+            background-color: var(--bg-section);
+        }
+
+        .theme-bg-card {
+            background-color: var(--bg-card);
+        }
+
+        .theme-text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .bg-primary {
+            background-color: var(--primary);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .bg-accent {
+            background-color: var(--accent);
+        }
+
+        .border-primary {
+            border-color: var(--primary);
+        }
+
+        .border-accent {
+            border-color: var(--accent);
+        }
+
+        .nav-bg {
+            background-color: var(--nav-bg);
+        }
+    
+body { font-family: Arial, sans-serif; }
+.theme-switcher { position: fixed; bottom: 10px; right: 10px; background: #333; padding: 5px 10px; border-radius: 5px; font-size: 12px; z-index: 9999; }
+.theme-switcher a { margin-right: 8px; text-decoration: none; }
+.theme-switcher a:last-child { margin-right: 0; }
+</style>
+</head>
+<body class="font-sans antialiased transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 shadow-md py-4 border-b border-gray-700/50" style="background-color: #0F172A;">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="nav-logo flex items-center gap-3">
+                <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto">
+                <span class="text-white font-bold text-xl hidden sm:block">Besler Holdings</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <!-- Light/Dark Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors border border-white/20" title="Toggle Light/Dark">
+                    <svg id="sun-icon" class="w-6 h-6 text-yellow-400 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                    <svg id="moon-icon" class="w-6 h-6 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+
+                <button class="md:hidden hamburger flex flex-col gap-1.5 p-1">
+                    <span class="w-6 h-0.5 bg-white transition-all"></span>
+                    <span class="w-6 h-0.5 bg-white transition-all"></span>
+                    <span class="w-6 h-0.5 bg-white transition-all"></span>
+                </button>
+                <ul class="md:flex hidden list-none gap-8 m-0">
+                    <li><a href="index.html#about" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">About</a></li>
+                    <li><a href="index.html#services" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Services</a></li>
+                    <li><a href="index.html#portfolio" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Portfolio</a></li>
+                    <li><a href="index.html#team" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Team</a></li>
+                    <li><a href="index.html#contact" class="text-white font-medium transition-colors" style="color: var(--accent);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent)'">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="text-center py-20 min-h-[40vh] flex items-center justify-center" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="text-lg mb-4" style="color: var(--accent);">Leadership Team</p>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4" style="color: #F8FAFC;">Kelly Wisness</h1>
+            <p class="text-2xl font-light" style="color: #FFD700;">Vice President of Marketing</p>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="theme-bg-section py-20 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Photo Column -->
+                <div class="md:col-span-1">
+                    <div class="theme-bg-card shadow-xl rounded-2xl p-6 border" style="border-color: var(--bg-section);">
+                        <div class="aspect-[3/4] bg-gray-200 rounded-xl overflow-hidden mb-6 flex items-center justify-center">
+                            <img src="images/kelly-wisness.jpg" alt="Kelly Wisness" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Marketing Expertise</h3>
+                        <ul class="theme-text-secondary space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Strategic Marketing
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Brand Communications
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Digital Marketing
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                HubSpot Certified
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bio Column -->
+                <div class="md:col-span-2">
+                    <div class="theme-bg-card shadow-xl rounded-2xl p-8 md:p-10 border" style="border-color: var(--bg-section);">
+                        <h2 class="text-3xl font-bold text-primary mb-6">About Kelly</h2>
+
+                        <div class="prose max-w-none">
+                            <p class="text-lg theme-text-secondary mb-6 leading-relaxed">
+                                Kelly Wisness serves as <strong class="text-primary">Vice President of Marketing at Besler Holdings</strong>, where she leads the organization's marketing strategy, brand development, and communications initiatives.
+                            </p>
+
+                            <h3 class="text-xl font-bold text-primary mb-4 mt-8">Extensive Marketing Experience</h3>
+                            <p class="theme-text-secondary mb-6 leading-relaxed">
+                                Kelly's career spans <strong class="text-primary">25+ years</strong> and includes <strong>varied marketing and communications experience</strong> across multiple industries. Her deep expertise spans strategic marketing planning, brand development, digital marketing, and corporate communications.
+                            </p>
+
+                            <h3 class="text-xl font-bold text-primary mb-4 mt-8">Marketing Leadership</h3>
+                            <p class="theme-text-secondary mb-6 leading-relaxed">
+                                As VP of Marketing, Kelly oversees all aspects of Besler's marketing operations. She develops and executes comprehensive marketing strategies that strengthen the company's brand presence, engage healthcare clients, and support business growth objectives.
+                            </p>
+
+                            <h3 class="text-xl font-bold text-primary mb-4 mt-8">Areas of Expertise</h3>
+                            <ul class="theme-text-secondary space-y-3 mb-6">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary mt-1">•</span>
+                                    <span><strong>Strategic Marketing Planning</strong> — Developing comprehensive marketing roadmaps</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary mt-1">•</span>
+                                    <span><strong>Brand Development</strong> — Building and maintaining strong brand identity</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary mt-1">•</span>
+                                    <span><strong>Digital Marketing</strong> — Leveraging modern marketing technologies and platforms</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary mt-1">•</span>
+                                    <span><strong>Corporate Communications</strong> — Managing internal and external messaging</span>
+                                </li>
+                            </ul>
+
+                            <h3 class="text-xl font-bold text-primary mb-4 mt-8">Certifications</h3>
+                            <p class="theme-text-secondary leading-relaxed">
+                                Kelly holds multiple <strong>HubSpot certifications</strong>, including <strong class="text-primary">HubSpot Marketing Software Certification</strong>, demonstrating her expertise in modern marketing automation and inbound marketing strategies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Back to Team -->
+                    <div class="mt-8 text-center">
+                        <a href="index.html#team" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1" style="background-color: var(--primary); color: white;">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                            </svg>
+                            Back to Leadership Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="nav-bg text-white text-center py-8 border-t border-gray-700">
+        <div class="max-w-6xl mx-auto px-4">
+            <img src="images/emblem.png" alt="Besler Holdings" class="h-10 w-auto mx-auto mb-4">
+            <p class="text-sm" style="color: var(--text-secondary);">© 2026 Besler Holdings. All rights reserved. | <a href="#" class="hover:underline" style="color: var(--accent);">Privacy</a> | <a href="#" class="hover:underline" style="color: var(--accent);">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Light/Dark Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const html = document.documentElement;
+
+        // Default to dark mode
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            html.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark');
+            if (isDark) {
+                html.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('ul');
+        hamburger?.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger?.contains(e.target) && !navMenu?.contains(e.target)) {
+                navMenu?.classList.add('hidden');
+            }
+        });
+    </script>
+
+<!-- Theme Switcher -->
+<div class="theme-switcher">
+<a href="kelly-wisness.html" style="color:#00AEEF;">Default</a>
+<a href="kelly-wisness-orange.html" style="color:#E25A2A;">Orange</a>
+<a href="kelly-wisness-teal.html" style="color:#00AEEF;">Teal</a>
+<a href="kelly-wisness-light.html" style="color:#003448;">Light</a>
+<a href="kelly-wisness-dark.html" style="color:#fff;">Dark</a>
+</div>
+</body>
+
+</html>
